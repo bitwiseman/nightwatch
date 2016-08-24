@@ -108,8 +108,8 @@ module.exports = {
         fs.readdir(src_folders[0], function(err, list) {
           try {
             assert.deepEqual(list, ['simple', 'tags'], 'The subfolders have been created.');
-            var simpleReportFile = 'output/simple/FIREFOX_TEST_TEST_sample.xml';
-            var tagsReportFile = 'output/tags/FIREFOX_TEST_TEST_sampleTags.xml';
+            var simpleReportFile = 'output/FIREFOX_TEST_TEST_/simple/sample.xml';
+            var tagsReportFile = 'output/FIREFOX_TEST_TEST_/tags/sampleTags.xml';
 
             assert.ok(fileExistsSync(simpleReportFile), 'The simple report file was not created.');
             assert.ok(fileExistsSync(tagsReportFile), 'The tags report file was not created.');
@@ -142,7 +142,7 @@ module.exports = {
       }, function(err, results) {
 
         assert.strictEqual(err, null);
-        var sampleReportFile = path.join(__dirname, '../../../output/FIREFOX_TEST_TEST_sample.xml');
+        var sampleReportFile = path.join(__dirname, '../../../output/FIREFOX_TEST_TEST_/sample.xml');
 
         assert.ok(fileExistsSync(sampleReportFile), 'The sample file report file was not created.');
         fs.readFile(sampleReportFile, function(err, data) {
